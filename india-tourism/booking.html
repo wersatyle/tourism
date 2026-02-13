@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - Incredible India</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <i class="fas fa-person-walking-luggage"></i>
+                <span>Incredible India</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="explore.html" class="nav-link">Explore</a></li>
+                <li><a href="booking.html" class="nav-link active">Book Trip</a></li>
+                <li><a href="map.html" class="nav-link">Map</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <div class="user-menu">
+                    <img src="https://ui-avatars.com/api/?name=User&background=4FC3F7&color=fff" alt="User" class="user-avatar">
+                    <div class="user-dropdown">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
+                        <a href="#"><i class="fas fa-history"></i> Bookings</a>
+                        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920')">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Book Your Trip</h1>
+            <p>Plan your perfect Indian adventure</p>
+            <div class="breadcrumb">
+                <a href="home.html">Home</a>
+                <span>/</span>
+                <span>Book Trip</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Booking Steps -->
+                <div class="booking-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span>Destination</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span>Details</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span>Payment</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <span>Confirmation</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Destination -->
+                <div class="booking-step-content active" id="step1">
+                    <h2>Select Your Destination</h2>
+                    <div class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-map-marker-alt"></i> Destination State</label>
+                                <select id="destinationState" required>
+                                    <option value="">Select State</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="himachalpradesh">Himachal Pradesh</option>
+                                    <option value="uttarakhand">Uttarakhand</option>
+                                    <option value="tamilnadu">Tamil Nadu</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="westbengal">West Bengal</option>
+                                    <option value="uttarpradesh">Uttar Pradesh</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-suitcase"></i> Trip Type</label>
+                                <select id="tripType" required>
+                                    <option value="">Select Type</option>
+                                    <option value="heritage">Heritage & Culture</option>
+                                    <option value="adventure">Adventure</option>
+                                    <option value="wellness">Wellness & Spa</option>
+                                    <option value="wildlife">Wildlife Safari</option>
+                                    <option value="beach">Beach Holiday</option>
+                                    <option value="pilgrimage">Pilgrimage</option>
+                                    <option value="honeymoon">Honeymoon</option>
+                                    <option value="family">Family Vacation</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-alt"></i> Start Date</label>
+                                <input type="date" id="startDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-check"></i> End Date</label>
+                                <input type="date" id="endDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label><i class="fas fa-users"></i> Number of Travelers</label>
+                                <div class="travelers-input">
+                                    <div class="traveler-type">
+                                        <span>Adults</span>
+                                        <div class="counter">
+                                            <button type="button" class="counter-btn minus" data-target="adults">-</button>
+                                            <input type="number" id="adults" value="2" min="1" max="10">
+                                            <button type="button" class="counter-btn plus" data-target="adults">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="traveler-type">
+                                        <span>Children</span>
+                                        <div class="counter">
+                                            <button type="button" class="counter-btn minus" data-target="children">-</button>
+                                            <input type="number" id="children" value="0" min="0" max="6">
+                                            <button type="button" class="counter-btn plus" data-target="children">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-actions">
+                        <button class="next-btn" onclick="nextStep(2)">Continue <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Details -->
+                <div class="booking-step-content" id="step2">
+                    <h2>Traveler Details</h2>
+                    <div class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-user"></i> Full Name</label>
+                                <input type="text" id="fullName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-phone"></i> Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-globe"></i> Nationality</label>
+                                <select id="nationality" required>
+                                    <option value="">Select Nationality</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="foreign">Foreign National</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label><i class="fas fa-hotel"></i> Accommodation Preference</label>
+                                <div class="accommodation-options">
+                                    <label class="accommodation-option">
+                                        <input type="radio" name="accommodation" value="budget">
+                                        <div class="option-card">
+                                            <i class="fas fa-home"></i>
+                                            <h4>Budget</h4>
+                                            <p>₹2,000 - ₹4,000/night</p>
+                                        </div>
+                                    </label>
+                                    <label class="accommodation-option">
+                                        <input type="radio" name="accommodation" value="standard" checked>
+                                        <div class="option-card">
+                                            <i class="fas fa-building"></i>
+                                            <h4>Standard</h4>
+                                            <p>₹4,000 - ₹8,000/night</p>
+                                        </div>
+                                    </label>
+                                    <label class="accommodation-option">
+                                        <input type="radio" name="accommodation" value="luxury">
+                                        <div class="option-card">
+                                            <i class="fas fa-crown"></i>
+                                            <h4>Luxury</h4>
+                                            <p>₹8,000+/night</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label><i class="fas fa-comment-alt"></i> Special Requests</label>
+                                <textarea id="specialRequests" placeholder="Any dietary requirements, accessibility needs, or special requests..." rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-actions">
+                        <button class="prev-btn" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="next-btn" onclick="nextStep(3)">Continue <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div class="booking-step-content" id="step3">
+                    <h2>Payment Details</h2>
+                    <div class="payment-summary">
+                        <h3>Booking Summary</h3>
+                        <div class="summary-item">
+                            <span>Destination</span>
+                            <span id="summaryDestination">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Trip Type</span>
+                            <span id="summaryTripType">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Duration</span>
+                            <span id="summaryDuration">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Travelers</span>
+                            <span id="summaryTravelers">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Accommodation</span>
+                            <span id="summaryAccommodation">-</span>
+                        </div>
+                        <hr>
+                        <div class="summary-item">
+                            <span>Package Cost</span>
+                            <span id="packageCost">₹0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Accommodation</span>
+                            <span id="accommodationCost">₹0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Taxes & Fees</span>
+                            <span id="taxesCost">₹0</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total Amount</span>
+                            <span id="totalCost">₹0</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h3>Payment Method</h3>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card" checked>
+                                <div class="payment-card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="upi">
+                                <div class="payment-card">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>UPI</span>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="netbanking">
+                                <div class="payment-card">
+                                    <i class="fas fa-university"></i>
+                                    <span>Net Banking</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="card-details" id="cardDetails">
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label>Card Number</label>
+                                    <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Expiry Date</label>
+                                    <input type="text" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="password" placeholder="***" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label>Name on Card</label>
+                                    <input type="text" placeholder="Enter name on card">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="prev-btn" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="next-btn pay-btn" onclick="processPayment()">
+                            <i class="fas fa-lock"></i> Pay Securely
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Confirmation -->
+                <div class="booking-step-content" id="step4">
+                    <div class="confirmation-content">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Booking Confirmed!</h2>
+                        <p>Your incredible journey awaits</p>
+                        <div class="booking-id">
+                            <span>Booking ID:</span>
+                            <strong id="bookingId">IND-2026-XXXXXX</strong>
+                        </div>
+                        <div class="confirmation-details">
+                            <p>A confirmation email has been sent to your registered email address with all the details.</p>
+                        </div>
+                        <div class="confirmation-actions">
+                            <a href="home.html" class="home-btn"><i class="fas fa-home"></i> Back to Home</a>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download Itinerary</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Packages -->
+            <div class="popular-packages">
+                <h2>Popular Tour Packages</h2>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400" alt="Golden Triangle">
+                            <span class="package-badge">Bestseller</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Golden Triangle Tour</h3>
+                            <p>Delhi - Agra - Jaipur</p>
+                            <div class="package-details">
+                                <span><i class="fas fa-clock"></i> 6 Days / 5 Nights</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="package-price">
+                                <span class="price">₹35,000</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="package-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400" alt="Kerala Backwaters">
+                            <span class="package-badge hot">Hot Deal</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Kerala Backwaters</h3>
+                            <p>Kochi - Munnar - Alleppey</p>
+                            <div class="package-details">
+                                <span><i class="fas fa-clock"></i> 7 Days / 6 Nights</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                            <div class="package-price">
+                                <span class="price">₹42,000</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="package-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=400" alt="Himalayan Adventure">
+                        </div>
+                        <div class="package-content">
+                            <h3>Himalayan Adventure</h3>
+                            <p>Shimla - Manali - Dharamshala</p>
+                            <div class="package-details">
+                                <span><i class="fas fa-clock"></i> 8 Days / 7 Nights</span>
+                                <span><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                            <div class="package-price">
+                                <span class="price">₹38,000</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="package-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-person-walking-luggage"></i>
+                        <span>Incredible India</span>
+                    </div>
+                    <p>Your gateway to discovering the beauty, culture, and diversity of India.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="booking.html">Book Trip</a></li>
+                        <li><a href="map.html">Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="state.html?state=rajasthan">Rajasthan</a></li>
+                        <li><a href="state.html?state=kerala">Kerala</a></li>
+                        <li><a href="state.html?state=goa">Goa</a></li>
+                        <li><a href="state.html?state=himachalpradesh">Himachal Pradesh</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +91 1800 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@incredibleindia.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Incredible India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Package Details Modal -->
+    <div class="destination-modal" id="packageModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-image">
+                <img id="packageModalImage" src="" alt="Package">
+            </div>
+            <div class="modal-body">
+                <span class="modal-category" id="packageModalBadge"></span>
+                <h2 id="packageModalTitle"></h2>
+                <p id="packageModalRoute"></p>
+                <div class="modal-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="packageModalDuration"></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-star"></i>
+                        <span id="packageModalRating"></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span id="packageModalPrice"></span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn primary" onclick="bookPackage()"><i class="fas fa-calendar-check"></i> Book Now</button>
+                    <button class="modal-btn secondary" onclick="closePackageModal()"><i class="fas fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

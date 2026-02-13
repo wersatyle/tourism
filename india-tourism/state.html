@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Details - Incredible India</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <i class="fas fa-person-walking-luggage"></i>
+                <span>Incredible India</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="explore.html" class="nav-link active">Explore</a></li>
+                <li><a href="booking.html" class="nav-link">Book Trip</a></li>
+                <li><a href="map.html" class="nav-link">Map</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <div class="user-menu">
+                    <img src="https://ui-avatars.com/api/?name=User&background=4FC3F7&color=fff" alt="User" class="user-avatar">
+                    <div class="user-dropdown">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
+                        <a href="#"><i class="fas fa-history"></i> Bookings</a>
+                        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- State Header -->
+    <section class="state-header" id="stateHeader">
+        <div class="state-header-overlay"></div>
+        <div class="state-header-content">
+            <span class="state-region" id="stateRegion"></span>
+            <h1 id="stateName">Loading...</h1>
+            <p id="stateTagline"></p>
+            <div class="state-stats">
+                <div class="state-stat">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="placesCount">0 Places</span>
+                </div>
+                <div class="state-stat">
+                    <i class="fas fa-star"></i>
+                    <span id="stateRating">0.0 Rating</span>
+                </div>
+                <div class="state-stat">
+                    <i class="fas fa-sun"></i>
+                    <span id="bestTime">Best Time</span>
+                </div>
+            </div>
+            <div class="breadcrumb">
+                <a href="home.html">Home</a>
+                <span>/</span>
+                <a href="explore.html">Explore</a>
+                <span>/</span>
+                <span id="breadcrumbState">State</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- State Content -->
+    <section class="state-content">
+        <div class="container">
+            <!-- About Section -->
+            <div class="state-about">
+                <h2><i class="fas fa-info-circle"></i> About</h2>
+                <p id="stateDescription"></p>
+            </div>
+
+            <!-- Quick Info -->
+            <div class="quick-info-grid">
+                <div class="quick-info-card">
+                    <i class="fas fa-building"></i>
+                    <h4>Capital</h4>
+                    <p id="stateCapital">-</p>
+                </div>
+                <div class="quick-info-card">
+                    <i class="fas fa-language"></i>
+                    <h4>Language</h4>
+                    <p id="stateLanguage">-</p>
+                </div>
+                <div class="quick-info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>Best Time to Visit</h4>
+                    <p id="stateBestTime">-</p>
+                </div>
+                <div class="quick-info-card">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h4>Climate</h4>
+                    <p id="stateClimate">-</p>
+                </div>
+            </div>
+
+            <!-- Places to Visit -->
+            <div class="state-section">
+                <h2><i class="fas fa-map-marked-alt"></i> Places to Visit</h2>
+                <div class="places-grid" id="placesGrid">
+                    <!-- Places will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Famous Food -->
+            <div class="state-section">
+                <h2><i class="fas fa-utensils"></i> Famous Food</h2>
+                <div class="food-grid" id="foodGrid">
+                    <!-- Food items will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Culture & Festivals -->
+            <div class="state-section">
+                <h2><i class="fas fa-theater-masks"></i> Culture & Festivals</h2>
+                <div class="festivals-grid" id="festivalsGrid">
+                    <!-- Festivals will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Travel Tips -->
+            <div class="state-section">
+                <h2><i class="fas fa-lightbulb"></i> Travel Tips</h2>
+                <div class="tips-container" id="tipsContainer">
+                    <!-- Tips will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Book Now CTA -->
+            <div class="book-cta">
+                <div class="book-cta-content">
+                    <h2>Ready to Explore?</h2>
+                    <p>Book your trip now and experience the magic</p>
+                </div>
+                <a href="booking.html" class="book-cta-btn">
+                    <i class="fas fa-ticket-alt"></i>
+                    Book Your Trip
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-person-walking-luggage"></i>
+                        <span>Incredible India</span>
+                    </div>
+                    <p>Your gateway to discovering the beauty, culture, and diversity of India.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="booking.html">Book Trip</a></li>
+                        <li><a href="map.html">Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="state.html?state=rajasthan">Rajasthan</a></li>
+                        <li><a href="state.html?state=kerala">Kerala</a></li>
+                        <li><a href="state.html?state=goa">Goa</a></li>
+                        <li><a href="state.html?state=himachalpradesh">Himachal Pradesh</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +91 1800 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@incredibleindia.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Incredible India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
